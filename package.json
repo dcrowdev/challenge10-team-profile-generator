@@ -1,0 +1,27 @@
+{
+  "name": "team-profile-gen",
+  "version": "1.0.0",
+  "description": "node team profile generator homework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcrowdev/challenge10-team-profile-generator.git"
+  },
+  "keywords": [
+    "profile",
+    "generator",
+    "team"
+  ],
+  "author": "Dylan Crowley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dcrowdev/challenge10-team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/dcrowdev/challenge10-team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
