@@ -1,5 +1,5 @@
 const genManager = (manager) => {
-    return `<div class="card m-3 row-col-3 p-0" style="width: 18rem;">
+    return `<div class="card m-3 col-4 p-0" style="width: 18rem;">
             <div class="card-header text-white bg-primary">
                 <h3 class="card-title">${manager.name}</h3>
                 <h5 class="card-text">Manager</h5>
@@ -15,7 +15,7 @@ const genManager = (manager) => {
 }
 
 const genEngineer = (engineer) => {
-    return `<div class="card m-3 row-col-3 p-0" style="width: 18rem;">
+    return `<div class="card m-3 col-4 p-0" style="width: 18rem;">
             <div class="card-header text-white bg-primary">
                 <h3 class="card-title">${engineer.name}</h3>
                 <h5 class="card-text">Engineer</h5>
@@ -31,7 +31,7 @@ const genEngineer = (engineer) => {
 }
 
 const genIntern = (intern) => {
-    return `<div class="card m-3 row-col-3 p-0" style="width: 18rem;">
+    return `<div class="card m-3 col-4 p-0" style="width: 18rem;">
             <div class="card-header text-white bg-primary">
                 <h3 class="card-title">${intern.name}</h3>
                 <h5 class="card-text">Intern</h5>
