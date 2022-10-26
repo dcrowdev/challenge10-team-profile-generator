@@ -1,8 +1,10 @@
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const generateHTML = require('./generateHTML');
 const fs = require('fs');
-const Engineer = require('./lib/Engineer');
+const path = require('path')
 
 const team = []
 
@@ -112,7 +114,9 @@ const addIntern = () => {
     })
 }
 
-//buildTeam( (writefile, generatehtml) )
+function buildTeam() {
+    fs.writeFile(path.join(__dirname, '/dist', 'generatedHTML.html'), generateHTML(team), err => err ? console.error(err) : console.log('Success!'))
+}
 
 
 mainMenu();
