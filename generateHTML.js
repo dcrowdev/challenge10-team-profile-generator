@@ -7,7 +7,7 @@ const genManager = (manager) => {
             <div class="card-body bg-secondary">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${manager.id}</li>
-                <li class="list-group-item">Email: ${manager.email}</li>
+                <li class="list-group-item">Email: <a target="__blank" href="mailto:${manager.email}">${manager.email}</a></li>
                 <li class="list-group-item">Office Number: ${manager.officenumber}</li>
             </ul>
             </div>
@@ -23,8 +23,8 @@ const genEngineer = (engineer) => {
             <div class="card-body bg-secondary">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${engineer.id}</li>
-                <li class="list-group-item">Email: ${engineer.email}</li>
-                <li class="list-group-item">Github: ${engineer.officenumber}</li>
+                <li class="list-group-item">Email: <a target="__blank" href="mailto:${engineer.email}">${engineer.email}</a></li>
+                <li class="list-group-item">Github: <a target="__blank" href="https://github.com/${engineer.github}">${engineer.github}</a></li>
             </ul>
             </div>
         </div>`
@@ -39,8 +39,8 @@ const genIntern = (intern) => {
             <div class="card-body bg-secondary">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${intern.id}</li>
-                <li class="list-group-item">Email: ${intern.email}</li>
-                <li class="list-group-item">School: ${intern.officenumber}</li>
+                <li class="list-group-item">Email: <a target="__blank" href="mailto:${intern.email}">${intern.email}</a></li>
+                <li class="list-group-item">School: ${intern.school}</li>
             </ul>
             </div>
         </div>`
@@ -49,8 +49,8 @@ const genIntern = (intern) => {
 
 const insertCards = (team) => {
 let cards = [];
-for (let i = 0; i < team.length; i++) {
-    const employee = team[i];
+team.forEach(member => {
+    const employee = member;
     const role = employee.getRole()
 
     if (role === 'Manager') {
@@ -63,9 +63,8 @@ for (let i = 0; i < team.length; i++) {
         const internCard = genIntern(employee)
         cards.push(internCard)
     }
-}
-
-return cards.join('')
+})
+  return cards.join('')
 }
 
 const generateHTML = (team) => {
@@ -78,19 +77,22 @@ const generateHTML = (team) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" type="text/css">
     <title>Team Profile Generator!</title>
 </head>
 
 <body>
 
     <header class="container-fluid bg-danger text-center row">
-        <h1 class="p-5">My Team</h1>
+        <h1 class="p-5 text-white">My Team</h1>
     </header>
 
-    <div class="container-fluid row d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="container-sm row align-items-center justify-content-center">
         
         ${insertCards(team)}
 
+        </div>
     </div>
 </body>
 

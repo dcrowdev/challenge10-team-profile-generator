@@ -75,7 +75,7 @@ const addEngineer = () => {
     },
     {
         type: 'input',
-        name: 'number',
+        name: 'github',
         message: 'What is the engineers github?'
     }
     ]).then(answers => {
